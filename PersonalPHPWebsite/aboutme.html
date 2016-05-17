@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Imagery A La Carte</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
+    <meta name='description' content='add a description here'>
+    <meta name='keywords' content='add your keywords here seperated by a coma'>
+    <meta name='author' content='your name and/or e-mail'>
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Six+Caps' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>   -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>    
+    
+</head>
+<body>
+    <header class= "container-fluid " id="links">
+		<div class="row">       
+			<div class="col-md-3 perspective col-md-offset-0" >        
+				<!--links to google, linkden, twitter, facebook -->
+		        
+		        <div class="col-md-3">
+		            <a href="https://www.facebook.com/pages/Imagery-%C3%A0-la-Carte/199760846788655"><img class="img-responsive" src="images/fb-icons_01.png" alt="Link to Facebook page"></a>
+		        </div>
+		        <div class="col-md-3">
+		            <a href="https://twitter.com/SarahGopaul"><img class="img-responsive" src="images/l-icons_01.png" alt="Link to linkedin page" ></a>
+		        </div>
+		        <div class="col-md-3">
+		            <a href=""><img class="img-responsive" src="images/t-icons_01.png" alt="Link to Twitter Page" ></a>
+		        </div>
+		        <div class="col-md-3">
+		            <a href=""><img class="img-responsive" src="images/Google-plus-favicon-logo.jpg" alt="Link to Google Plus Page" ></a>
+		        </div>        
+        	</div>
+			<!--This is the title at the top of the screen -->
+        	<div class=" col-md-offset-1 col-md-5">
+        		<h1 id="maintitle">Imagery A La Carte</h1>
+        	</div>
+			<!-- search box for the site -->
+        	<form class="navbar-form navbar-left" role="Search">        
+        		<div class="cold-md-4  col-md-offset-0">
+					<input type="email" class="form control" placeholder="Search"><button type="submit" class="btn btn-default">Submit </button>
+        		</div>
+			</form>    	
+    	</div>
+    </header>
+    
+    <hr class="hrone">
+    <!-- This is The Email List -->
+	<div id="middle" class="container-fluid">
+		<div class="row col-md-offset-1">
+			<div>
+				<img class="img-responsive" 
+				<p> this is where you put your about me stuff</p> 
+				
+			
+			
+			</div>
+			<div class="col-md-4 col-md-offset-1">
+				<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" class="form-group" id="myform">
+					<div class="title">
+						<div id="title">
+							<h2>Mailing List</h2>
+						</div>
+						<div>
+							<input id="mailinglistemail" class="form-control" name="emailmailinglist" type="email" placeholder="Email" size="51" onblur="checkemail(mailinglistemail)"><?php echo $errors['emailmailinglist']; ?>
+						</div>
+						<div id="submit">
+							<input type="submit" name="Submitmailinglist" value="Submit" class="button" onclick="submit()">
+						</div>
+					</div>
+				</form>	
+				<!-- if javascript is not enabled than run PHP validation -->
+				<noscript>	
+					<?php
+						$required = array('name', 'subject', 'email', 'comments');
+						// checks to see if the user submitted the form and then will check if the fields are empty
+						if (isset($_POST['Submit1'])) {
+						foreach ($required as $field) {
+							$value = trim($_POST[$field]);
+							if (empty($value)) {
+								$errors[$field] = "Required";
+							}
+						}
+						// sets a variable to what the users inputs for the email
+						$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+						//checks to see if the $email is empty and then checks to see if its is a valid email.
+						if ($errors['email'] !== "Required") {
+							!filter_var($email, FILTER_VALIDATE_EMAIL) ? $errors['validemail'] = "Not a Valid E-mail" : "";
+							}
+						}
+					?>  
+				</noscript>
+				<form id="contactform"  method="post">
+					<label class="sr-only">Name *</label>
+					<input type="text" id="personname" class="form-control" required name="name" placeholder="Name" onblur="checkname()" value="<?php echo $name ?>" ><span class="error"> <?php echo $errors['name']; ?></span>
+					<br>
+					<label class="sr-only">Subject *</label>
+					<input type="text" id="subject" class="form-control" placeholder="Subject" name="subject" onblur="checksubject()"  value="<?php echo $name?>"><span class="error"><?php echo $errors['subject'] ?></span>
+					<br>
+					<label class="sr-only">E-mail Address *</label>
+					<input type="email" id="contactemail" class="email form-control" name="email" placeholder="E-mail Address" onblur="checkemail(email)" value="<?php echo $name?>"><span class="error"><?php echo $errors['email'] . " " . $errors['validemail']; ?></span>
+					<br>
+					<label class="sr-only">Comments *</label>
+					<textarea id="comments" class="form-control" name="comments" placeholder="Comments"  maxlength="1000" cols="31" rows="6" onblur="checkcomments()" ></textarea><span class="error"><?php echo $errors['comments']; ?></span>
+					<br><base target="" />
+					<input id="submit1" type="submit" name="Submit1" class="button" onclick="submit()">
+					<script src="js/sarahwebsite.js"></script>				
+				</form>
+			</div>
+		</div>	
+    </div>
+     
+    <hr id="hrone">
+	<!-- this is the menu at the bottom of the page -->
+    <footer class="container-fluid">
+        <nav class="row" id="mainmenu">
+            <ul>
+				<li class="col-md-1"></li>
+                <li class="col-md-2"><a href="SarahsWebsite.php">Home</a></li>
+                <li class="col-md-2"><a href="aboutme.html" target="_blank">About Me</a></li>
+                <li class="col-md-2"><a href="archive.html" target="_blank">Archives</a></li>
+                <li class="col-md-2" id="subscribe">Subscribe</li>
+                <li class="col-md-2" id="contactme"> Contact Me</li>
+				<li class="col-md-1"></li>
+			</ul>
+        </nav>
+    </footer>
+</body>
+</html>

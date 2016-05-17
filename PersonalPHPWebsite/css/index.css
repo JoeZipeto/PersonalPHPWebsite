@@ -1,0 +1,99 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body{
+	width: 100%
+}
+
+header{
+	margin: 0 auto;
+}
+
+img{
+	height: 50px;
+	width: 50px;
+}
+.img {
+	width: 40%;
+	float: left;
+	margin-right: 4%;
+}
+
+#maintitle{
+	display: inline;
+	font-family: 'Great Vibes', cursive;
+	font-size: 400%;
+	color: #C0C0C0;
+	text-shadow: 0 1px 0
+}
+#input{
+	width: 20%;
+}
+
+.font{
+	font-size:small;
+	text-decoration:underline;
+	font-weight: bolder;
+	vertical-align: top;
+}
+.title{
+color: #C0C0C0;
+}
+
+.button{
+	border-radius: 15px;
+	padding: 10px;
+	font-size: 25px;
+	margin: 5px;
+	background-color:	#2372A7;
+	text-shadow: 1px 1px #57D6C7;
+	color: #70b6e5;
+	border:	none;
+	min-height: 35px;
+	min-width: 40px;
+}
+
+footer{
+	margin: 0 auto;
+}
+#mainmenu{
+  
+  vertical-align: bottom;  
+  background-color: #444;
+  border: 1px solid black;
+  text-align:center;
+  
+}
+
+
+
+#mainmenu a{
+	border-radius: 150px;
+	padding: 15px;
+	text-align: center;
+	font-family: 'Six Caps', sans-serif;
+	font-size: 3vw;
+	color: #C0C0C0;
+	text-decoration: none; 
+	display: inline;
+	text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+            
+ }
+
+#mainmenu ul li:hover{
+	background-color: #2C2C2C; 
+ }
+
